@@ -16,9 +16,15 @@ class RecentOrders extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          //Using an Expanded widget makes a child of a Row or Column (also for Flex) expand to fill
+          //the available space in the main axis ( horizontally for a Row or vertically for a Column).
+          // If multiple children are expanded, the available space is divided among them according to
+          //the flex factor.
           Expanded(
             child: Row(
               children: [
+                //The ClipRRect class in Flutter provides us with a widget that clips its child using
+                //a rounded rectangle. The extra R in clipRRect stands for rounded.
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Image(
@@ -50,7 +56,7 @@ class RecentOrders extends StatelessWidget {
                         ),
                         Text(
                           order.restaurant.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16.0,
                             fontWeight: FontWeight.w600,
                           ),

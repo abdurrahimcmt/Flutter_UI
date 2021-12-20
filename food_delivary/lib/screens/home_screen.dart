@@ -38,6 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Padding(
             padding: const EdgeInsets.all(20.0),
+            //Search box Work Start
             child: TextField(
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
@@ -45,7 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.circular(30),
                   borderSide: const BorderSide(width: 0.8),
                 ),
-                prefixIcon: const Icon(Icons.search),
+                prefixIcon: const Icon(
+                  Icons.search,
+                ),
                 suffixIcon: IconButton(
                   onPressed: () {},
                   icon: const Icon(
