@@ -5,6 +5,8 @@ import 'package:food_delivary/screens/restaurant_screen.dart';
 import 'package:food_delivary/widgets/recent_orders.dart';
 import 'package:food_delivary/widgets/reting_starts.dart';
 
+import 'cart_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -120,7 +122,12 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("Food Delivery"),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => CartScreen(),
+              ),
+            ),
             child: Text(
               'Cart  (${currentUser.cart.length})',
               style: const TextStyle(
