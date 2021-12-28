@@ -4,6 +4,7 @@ import 'package:food_delivary/models/order.dart';
 
 class RecentOrders extends StatelessWidget {
   const RecentOrders({Key? key}) : super(key: key);
+
   _buildRecentOrder(BuildContext context, Order order) {
     return Container(
       width: 320.0,
@@ -57,8 +58,8 @@ class RecentOrders extends StatelessWidget {
                         Text(
                           order.restaurant.name,
                           style: const TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w400,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -68,8 +69,8 @@ class RecentOrders extends StatelessWidget {
                         Text(
                           order.date,
                           style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w400,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
