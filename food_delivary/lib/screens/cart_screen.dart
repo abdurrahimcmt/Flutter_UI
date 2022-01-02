@@ -124,8 +124,9 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     double totalPrice = 0;
-    currentUser.cart.forEach(
-        (Order order) => totalPrice += order.quantity * order.food.price);
+    for (var order in currentUser.cart) {
+      totalPrice += order.quantity * order.food.price;
+    }
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
