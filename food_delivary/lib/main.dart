@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivary/screens/home_screen.dart';
+
+import 'package:food_delivary/screens/splash_screen.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({
+    Key? key,
+  }) : super(key: key);
 
+  // Color _primaryColor = HexColor('#DC54FE');
+  Color _accentColor = HexColor('#3C0E00');
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Food Delivery UI',
+      title: 'Food Delivery',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.grey[50],
+        accentColor: _accentColor,
+        primarySwatch: Colors.grey,
+        // scaffoldBackgroundColor: Colors.grey[50],
         primaryColor: Colors.deepOrangeAccent,
       ),
       home: SafeArea(
-        child: HomeScreen(),
+        child: SplashScreen(title: 'Food Delivery'),
       ),
     );
   }

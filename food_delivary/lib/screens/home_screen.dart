@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:food_delivary/data/data.dart';
 import 'package:food_delivary/models/restaurant.dart';
+import 'package:food_delivary/screens/forgot_password_page.dart';
+import 'package:food_delivary/screens/forgot_password_verification_page.dart';
+import 'package:food_delivary/screens/login_page.dart';
+import 'package:food_delivary/screens/profile_page.dart';
+
+import 'package:food_delivary/screens/registration_page.dart';
 import 'package:food_delivary/screens/restaurant_screen.dart';
+import 'package:food_delivary/screens/splash_screen.dart';
 import 'package:food_delivary/widgets/recent_orders.dart';
 import 'package:food_delivary/widgets/reting_starts.dart';
 
@@ -109,17 +117,34 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  double _drawerIconSize = 24;
+  double _drawerFontSize = 17;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.account_circle),
+        // leading: IconButton(
+        //   onPressed: () => Navigator.push(
+        //     context,
+        //     MaterialPageRoute(
+        //       builder: (_) => ProfilePage(),
+        //     ),
+        //   ),
+        //   icon: const Icon(
+        //     Icons.account_circle,
+        //     color: Colors.white,
+        //     size: 30.0,
+        //   ),
+        // ),
+        title: Text(
+          "Food Delivery",
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
         ),
-        title: Text("Food Delivery"),
         actions: [
           TextButton(
             onPressed: () => Navigator.push(
@@ -137,6 +162,172 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: [
+                0.0,
+                1.0
+              ],
+                  colors: [
+                Theme.of(context).primaryColor.withOpacity(0.2),
+                Theme.of(context).accentColor.withOpacity(0.5),
+              ])),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: [0.0, 1.0],
+                    colors: [
+                      Theme.of(context).primaryColor,
+                      Theme.of(context).accentColor,
+                    ],
+                  ),
+                ),
+                child: Container(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    "Food Delivery",
+                    style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.account_circle_rounded,
+                  size: _drawerIconSize,
+                  color: Theme.of(context).accentColor,
+                ),
+                title: Text(
+                  'Profile',
+                  style: TextStyle(
+                      fontSize: 17, color: Theme.of(context).accentColor),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ProfilePage()));
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.login_rounded,
+                    size: _drawerIconSize,
+                    color: Theme.of(context).accentColor),
+                title: Text(
+                  'Login Page',
+                  style: TextStyle(
+                      fontSize: _drawerFontSize,
+                      color: Theme.of(context).accentColor),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                },
+              ),
+              Divider(
+                color: Theme.of(context).primaryColor,
+                height: 1,
+              ),
+              ListTile(
+                leading: Icon(Icons.person_add_alt_1,
+                    size: _drawerIconSize,
+                    color: Theme.of(context).accentColor),
+                title: Text(
+                  'Registration Page',
+                  style: TextStyle(
+                      fontSize: _drawerFontSize,
+                      color: Theme.of(context).accentColor),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegistrationPage()),
+                  );
+                },
+              ),
+              Divider(
+                color: Theme.of(context).primaryColor,
+                height: 1,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.password_rounded,
+                  size: _drawerIconSize,
+                  color: Theme.of(context).accentColor,
+                ),
+                title: Text(
+                  'Forgot Password Page',
+                  style: TextStyle(
+                      fontSize: _drawerFontSize,
+                      color: Theme.of(context).accentColor),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ForgotPasswordPage()),
+                  );
+                },
+              ),
+              Divider(
+                color: Theme.of(context).primaryColor,
+                height: 1,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.verified_user_sharp,
+                  size: _drawerIconSize,
+                  color: Theme.of(context).accentColor,
+                ),
+                title: Text(
+                  'Verification Page',
+                  style: TextStyle(
+                      fontSize: _drawerFontSize,
+                      color: Theme.of(context).accentColor),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ForgotPasswordVerificationPage()),
+                  );
+                },
+              ),
+              Divider(
+                color: Theme.of(context).primaryColor,
+                height: 1,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.logout_rounded,
+                  size: _drawerIconSize,
+                  color: Theme.of(context).accentColor,
+                ),
+                title: Text(
+                  'Logout',
+                  style: TextStyle(
+                      fontSize: _drawerFontSize,
+                      color: Theme.of(context).accentColor),
+                ),
+                onTap: () {
+                  SystemNavigator.pop();
+                },
+              ),
+            ],
+          ),
+        ),
       ),
       body: ListView(
         children: [
