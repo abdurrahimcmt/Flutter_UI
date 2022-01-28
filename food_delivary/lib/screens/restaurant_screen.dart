@@ -6,7 +6,8 @@ import 'package:food_delivary/widgets/reting_starts.dart';
 class RestaurantScreen extends StatefulWidget {
   final Restaurant restaurant;
 
-  RestaurantScreen({required this.restaurant});
+  const RestaurantScreen({Key? key, required this.restaurant})
+      : super(key: key);
   @override
   _RestaurantScreenState createState() => _RestaurantScreenState();
 }

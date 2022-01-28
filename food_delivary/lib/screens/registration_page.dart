@@ -50,11 +50,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   border:
                                       Border.all(width: 5, color: Colors.white),
                                   color: Colors.white,
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       color: Colors.black12,
                                       blurRadius: 20,
-                                      offset: const Offset(5, 5),
+                                      offset: Offset(5, 5),
                                     ),
                                   ],
                                 ),

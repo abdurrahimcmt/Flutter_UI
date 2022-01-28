@@ -16,8 +16,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  double _headerHeight = 200;
-  Key _formKey = GlobalKey<FormState>();
+  final double _headerHeight = 200;
+  final Key _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                   end: Alignment.bottomRight,
                   colors: <Color>[
                 Theme.of(context).primaryColor,
-                Theme.of(context).accentColor,
+                Theme.of(context).colorScheme.secondary,
               ])),
         ),
       ),

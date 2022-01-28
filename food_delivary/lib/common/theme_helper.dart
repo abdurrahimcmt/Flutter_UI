@@ -9,7 +9,7 @@ class ThemeHelper {
       hintText: hintText,
       fillColor: Colors.white,
       filled: true,
-      contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+      contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
       focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(100.0),
           borderSide: BorderSide(color: Colors.grey)),

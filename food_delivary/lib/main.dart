@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         accentColor: _accentColor,
         primarySwatch: Colors.grey,
-        // scaffoldBackgroundColor: Colors.grey[50],
+        // scaffoldBackgroundColor: Colors.grey[50],.
         primaryColor: Colors.deepOrangeAccent,
       ),
       home: SafeArea(
