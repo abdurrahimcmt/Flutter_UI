@@ -46,13 +46,13 @@ class RecentOrders extends StatelessWidget {
                       children: [
                         Text(
                           order.food.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 4.0,
                         ),
                         Text(
@@ -63,12 +63,12 @@ class RecentOrders extends StatelessWidget {
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 4.0,
                         ),
                         Text(
                           order.date,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 15.0,
                             fontWeight: FontWeight.w400,
                           ),
@@ -79,7 +79,7 @@ class RecentOrders extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(right: 20.0),
+                  margin: const EdgeInsets.only(right: 20.0),
                   width: 48.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
@@ -87,7 +87,7 @@ class RecentOrders extends StatelessWidget {
                   ),
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add,
                       //size: 30.0,
                       color: Colors.white,
@@ -108,8 +108,8 @@ class RecentOrders extends StatelessWidget {
       //mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
           child: Text(
             "Recent Orders",
             style: TextStyle(
@@ -119,10 +119,10 @@ class RecentOrders extends StatelessWidget {
             ),
           ),
         ),
-        Container(
+        SizedBox(
           height: 120.0,
           child: ListView.builder(
-            padding: EdgeInsets.only(left: 10.0),
+            padding: const EdgeInsets.only(left: 10.0),
             scrollDirection: Axis.horizontal,
             itemCount: currentUser.orders.length,
             itemBuilder: (BuildContext context, int index) {

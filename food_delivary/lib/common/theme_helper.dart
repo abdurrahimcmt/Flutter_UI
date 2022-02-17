@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class ThemeHelper {
   InputDecoration textInputDecoration(
@@ -40,10 +39,10 @@ class ThemeHelper {
     Color c1 = Theme.of(context).primaryColor;
     Color c2 = Theme.of(context).accentColor;
     if (color1.isEmpty == false) {
-      c1 = HexColor(color1);
+      c1 = Colors.amber;
     }
     if (color2.isEmpty == false) {
-      c2 = HexColor(color2);
+      c2 = Colors.amber;
     }
 
     return BoxDecoration(

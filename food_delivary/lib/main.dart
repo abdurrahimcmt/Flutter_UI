@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:food_delivary/screens/splash_screen.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   }) : super(key: key);
 
   // Color _primaryColor = HexColor('#DC54FE');
-  Color _accentColor = HexColor('#3C0E00');
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -21,10 +20,9 @@ class MyApp extends StatelessWidget {
       title: 'Food Delivery',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        accentColor: _accentColor,
-        primarySwatch: Colors.grey,
-        // scaffoldBackgroundColor: Colors.grey[50],.
         primaryColor: Colors.deepOrangeAccent,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey)
+            .copyWith(secondary: Colors.amber),
       ),
       home: SafeArea(
         child: SplashScreen(title: 'Food Delivery'),

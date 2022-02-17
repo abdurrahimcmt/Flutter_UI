@@ -38,24 +38,24 @@ class _CartScreenState extends State<CartScreen> {
                       children: [
                         Text(
                           order.food.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10.0,
                         ),
                         Text(
                           order.restaurant.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16.0,
                             fontWeight: FontWeight.w600,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10.0,
                         ),
                         Container(
@@ -80,7 +80,7 @@ class _CartScreenState extends State<CartScreen> {
                               ),
                               Text(
                                 order.quantity.toString(),
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -107,10 +107,10 @@ class _CartScreenState extends State<CartScreen> {
             ),
           ),
           Container(
-            margin: EdgeInsets.all(10.0),
+            margin: const EdgeInsets.all(10.0),
             child: Text(
               '\$${order.food.price * order.quantity}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 18.0,
               ),
@@ -146,7 +146,7 @@ class _CartScreenState extends State<CartScreen> {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     Text(
                       'Estimated Delivery Time :',
                       style: TextStyle(
@@ -163,13 +163,13 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Total Cost :',
                       style: TextStyle(
                         fontSize: 20.0,

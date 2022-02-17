@@ -9,7 +9,6 @@ import 'package:food_delivary/screens/profile_page.dart';
 
 import 'package:food_delivary/screens/registration_page.dart';
 import 'package:food_delivary/screens/restaurant_screen.dart';
-import 'package:food_delivary/screens/splash_screen.dart';
 import 'package:food_delivary/widgets/recent_orders.dart';
 import 'package:food_delivary/widgets/reting_starts.dart';
 
@@ -25,7 +24,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   _buildRestaurants() {
     List<Widget> restaurantList = [];
-    restaurants.forEach((Restaurant restaurant) {
+    for (var restaurant in restaurants) {
       restaurantList.add(
         GestureDetector(
           onTap: () => Navigator.push(
@@ -35,7 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            margin:
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(15.0),
@@ -68,31 +68,31 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Text(
                         restaurant.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 4.0,
                       ),
                       RatingStars(restaurant.rating),
-                      SizedBox(
+                      const SizedBox(
                         height: 4.0,
                       ),
                       Text(
                         restaurant.address,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 4.0,
                       ),
-                      Text(
+                      const Text(
                         '0.2 miles away',
                         style: TextStyle(
                           fontSize: 16.0,
@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 4.0,
                       ),
                     ],
@@ -111,14 +111,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       );
-    });
+    }
     return Column(
       children: restaurantList,
     );
   }
 
-  double _drawerIconSize = 24;
-  double _drawerFontSize = 17;
+  final double _drawerIconSize = 24;
+  final double _drawerFontSize = 17;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,9 +138,9 @@ class _HomeScreenState extends State<HomeScreen> {
         //     size: 30.0,
         //   ),
         // ),
-        title: Text(
+        title: const Text(
           "Food Delivery",
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.white,
             fontSize: 20,
           ),
@@ -150,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => CartScreen(),
+                builder: (_) => const CartScreen(),
               ),
             ),
             child: Text(
@@ -169,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: [
+                  stops: const [
                 0.0,
                 1.0
               ],
@@ -185,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    stops: [0.0, 1.0],
+                    stops: const [0.0, 1.0],
                     colors: [
                       Theme.of(context).primaryColor,
                       Theme.of(context).accentColor,
@@ -194,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child: Container(
                   alignment: Alignment.bottomLeft,
-                  child: Text(
+                  child: const Text(
                     "Food Delivery",
                     style: TextStyle(
                         fontSize: 25,
@@ -207,12 +207,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 leading: Icon(
                   Icons.account_circle_rounded,
                   size: _drawerIconSize,
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
                 title: Text(
                   'Profile',
                   style: TextStyle(
-                      fontSize: 17, color: Theme.of(context).accentColor),
+                      fontSize: 17,
+                      color: Theme.of(context).colorScheme.secondary),
                 ),
                 onTap: () {
                   Navigator.push(context,
@@ -222,12 +223,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ListTile(
                 leading: Icon(Icons.login_rounded,
                     size: _drawerIconSize,
-                    color: Theme.of(context).accentColor),
+                    color: Theme.of(context).colorScheme.secondary),
                 title: Text(
                   'Login Page',
                   style: TextStyle(
                       fontSize: _drawerFontSize,
-                      color: Theme.of(context).accentColor),
+                      color: Theme.of(context).colorScheme.secondary),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -243,12 +244,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ListTile(
                 leading: Icon(Icons.person_add_alt_1,
                     size: _drawerIconSize,
-                    color: Theme.of(context).accentColor),
+                    color: Theme.of(context).colorScheme.secondary),
                 title: Text(
                   'Registration Page',
                   style: TextStyle(
                       fontSize: _drawerFontSize,
-                      color: Theme.of(context).accentColor),
+                      color: Theme.of(context).colorScheme.secondary),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -265,7 +266,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 leading: Icon(
                   Icons.password_rounded,
                   size: _drawerIconSize,
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
                 title: Text(
                   'Forgot Password Page',
@@ -363,11 +364,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          RecentOrders(),
+          const RecentOrders(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Text(
                   'Nearby Restaurants',

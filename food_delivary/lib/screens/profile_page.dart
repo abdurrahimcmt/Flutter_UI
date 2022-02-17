@@ -16,13 +16,13 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Your Profile",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         elevation: 0.5,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -127,7 +127,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           padding:
                               const EdgeInsets.only(left: 8.0, bottom: 4.0),
                           alignment: Alignment.topLeft,
-                          child: Text(
+                          child: const Text(
                             "User Information",
                             style: TextStyle(
                               color: Colors.black87,

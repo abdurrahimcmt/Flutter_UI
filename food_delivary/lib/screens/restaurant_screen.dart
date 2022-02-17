@@ -43,7 +43,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   Colors.black54.withOpacity(0.3),
                   Colors.black38.withOpacity(0.3),
                 ],
-                stops: [0.1, 0.4, 0.6, 0.9],
+                stops: const [0.1, 0.4, 0.6, 0.9],
               ),
             ),
           ),
@@ -53,7 +53,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               children: [
                 Text(
                   MenuItem.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24.0,
                     letterSpacing: 1.2,
@@ -62,7 +62,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                 ),
                 Text(
                   '\$${MenuItem.price}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
                     letterSpacing: 1.2,
@@ -83,7 +83,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               ),
               child: IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.add,
                   size: 30.0,
                   color: Colors.white,

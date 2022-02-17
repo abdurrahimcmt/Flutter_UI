@@ -3,8 +3,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:food_delivary/common/theme_helper.dart';
 import 'package:food_delivary/widgets/header_widget.dart';
 
-import 'package:hexcolor/hexcolor.dart';
-
 import 'profile_page.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -227,7 +225,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               child: FaIcon(
                                 FontAwesomeIcons.googlePlus,
                                 size: 35,
-                                color: HexColor("#EC2D2F"),
+                                color: Colors.amber,
                               ),
                               onTap: () {
                                 setState(() {
@@ -251,14 +249,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 padding: EdgeInsets.all(0),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100),
-                                  border: Border.all(
-                                      width: 5, color: HexColor("#40ABF0")),
-                                  color: HexColor("#40ABF0"),
+                                  border:
+                                      Border.all(width: 5, color: Colors.amber),
+                                  color: Colors.amber,
                                 ),
                                 child: FaIcon(
                                   FontAwesomeIcons.twitter,
                                   size: 23,
-                                  color: HexColor("#FFFFFF"),
+                                  color: Colors.amber,
                                 ),
                               ),
                               onTap: () {
@@ -282,7 +280,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               child: FaIcon(
                                 FontAwesomeIcons.facebook,
                                 size: 35,
-                                color: HexColor("#3E529C"),
+                                color: Colors.amber,
                               ),
                               onTap: () {
                                 setState(() {
